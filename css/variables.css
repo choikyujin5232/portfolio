@@ -1,0 +1,27 @@
+:root {
+    --font-primary: 'Noto Sans KR', sans-serif;
+    --font-secondary: 'Roboto', sans-serif;
+    --font-special: 'Playfair Display', serif;
+
+    --font-size-base: 16px;
+    --font-size-lg: 24px;
+    --font-size-sm: 14px;
+
+    --font-weight-thin: 100;
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+    --font-weight-black: 900;
+    --font-weight-semiBold: 600;
+
+    --color-primary: #ffffff;
+    --color-secondary: #7b7b7b;
+}
+
+
+.shadows-into-light-regular {
+    font-family: "Shadows Into Light", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
