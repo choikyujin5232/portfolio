@@ -1,12 +1,44 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   background-color: #000 !important;
   color: #fff;
   transition: background-color 0.3s, color 0.3s;
+  cursor: none !important;
+}
+
+#mouseTracker {
+  position: fixed;
+  top: -12px;
+  left: -12px;
+  width: 24px;
+  height: 24px;
+  background: rgba(255, 255, 255, 1);
+  mix-blend-mode: difference;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition:
+    width 0.2s ease,
+    height 0.2s ease,
+    transform 0.02s ease-out;
+  z-index: 999999;
+}
+
+#mouseTracker.big {
+  top: -45px;
+  left: -45px;
+  width: 90px;
+  height: 90px;
+}
+
+#mouseTracker.imgsquare {
+  background: rgba(255, 255, 255, 0.8);
+  mix-blend-mode: screen;
 }
 
 .header {
@@ -26,14 +58,41 @@ html, body {
   align-items: center;
 }
 
+.intro {
+  margin: 15rem 0 15rem;
+  display: flex;
+  padding: 0 10rem;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10rem;
+}
+
+.intro-left {
+  font-size: 5rem;
+  font-family: "pretendard";
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.intro-right {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: #616161;
+  font-weight: 500;
+  letter-spacing: -0.8px;
+  font-family: "pretendard";
+}
+
 /*------------------------------- header -------------------------------------------*/
+
+
 
 .flip-path {
   transform: rotateX(90deg) translateY(20px);
   transform-origin: center;
   opacity: 0;
-  transition: 
-    transform 0.3s ease-in-out, 
+  transition:
+    transform 0.3s ease-in-out,
     opacity 0.2s ease-in-out;
   will-change: transform, opacity;
 }
@@ -88,12 +147,14 @@ html, body {
 
 /* svg_wrapper에 .on 클래스 붙이면 */
 .section01_inner_top.on {
-  transform: translateY(-90px); /* 위로 100px */
+  transform: translateY(-90px);
+  /* 위로 100px */
 }
 
 .flip_txt {
   margin-bottom: 5rem;
 }
+
 /*------------------------------- section01 effect -------------------------------------------*/
 
 .bx_wrap {
@@ -132,7 +193,7 @@ html, body {
 }
 
 .hide_text {
-  display: inline-block; 
+  display: inline-block;
   font-family: var(--font-secondary);
   font-size: 2.1rem;
   font-weight: 700;
@@ -153,6 +214,7 @@ html, body {
   overflow: hidden;
   width: 100%;
   height: 50px;
+  margin-bottom: 50px;
 }
 
 .line::after {
@@ -164,13 +226,37 @@ html, body {
   width: 0;
   background: rgba(121, 121, 121, 0.8);
   transition: width 0.7s ease-in-out;
-} 
+}
 
 .line.active::after {
   width: 100%;
 }
 
+.line2 {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  width: 100%;
+  height: 50px;
+}
+
+.line2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  width: 0;
+  background: rgba(121, 121, 121, 0.8);
+  transition: width 0.7s ease-in-out;
+}
+
+.line2.active::after {
+  width: 100%;
+}
+
 .section02 {
+  overflow: hidden;
   margin-top: 10rem;
 }
 
@@ -189,19 +275,21 @@ html, body {
 
 
 .section02_tit {
-  transform: scale(2.6);  /* 크게 시작 */
+  transform: scale(2.6);
+  /* 크게 시작 */
   transform-origin: center;
   transition: transform 1.8s cubic-bezier(0.23, 1, 0.32, 1);
   will-change: transform;
 }
 
 .section02_tit.shrink {
-  transform: scale(1);    /* 자연스럽게 축소 */
+  transform: scale(1);
+  /* 자연스럽게 축소 */
 }
 
 .Tools {
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   gap: 3rem;
   margin-top: 10rem;
   padding: 0 3rem;
@@ -251,10 +339,12 @@ html, body {
     opacity: 0;
     transform: rotateX(90deg);
   }
+
   50% {
     opacity: 1;
     transform: rotateX(0deg);
   }
+
   100% {
     opacity: 0;
     transform: rotateX(-90deg);
@@ -277,10 +367,12 @@ html, body {
     opacity: 0;
     transform: translateY(-50px);
   }
+
   50% {
     opacity: 1;
     transform: translateY(10px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0px);
@@ -292,10 +384,12 @@ html, body {
     opacity: 0;
     transform: translateY(-50px);
   }
+
   70% {
     opacity: 1;
     transform: translateY(10px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0px);
@@ -311,9 +405,11 @@ html, body {
   0% {
     transform: translateX(-10px);
   }
+
   50% {
     transform: translateX(10px);
   }
+
   100% {
     transform: translateX(-10px);
   }
@@ -329,15 +425,19 @@ html, body {
   0% {
     transform: scale(1) rotate(0deg);
   }
+
   25% {
     transform: scale(1.06) rotate(90deg);
   }
+
   50% {
     transform: scale(1) rotate(180deg);
   }
+
   75% {
     transform: scale(1.06) rotate(270deg);
   }
+
   100% {
     transform: scale(1) rotate(360deg);
   }
@@ -359,9 +459,11 @@ html, body {
   0% {
     transform: rotateY(0deg) scale(1);
   }
+
   50% {
     transform: rotateY(180deg) scale(1.05);
   }
+
   100% {
     transform: rotateY(360deg) scale(1);
   }
@@ -377,15 +479,19 @@ html, body {
   0% {
     transform: rotate(0deg) scale(1);
   }
+
   25% {
     transform: rotate(90deg) scale(1.03);
   }
+
   50% {
     transform: rotate(180deg) scale(1);
   }
+
   75% {
     transform: rotate(270deg) scale(1.03);
   }
+
   100% {
     transform: rotate(360deg) scale(1);
   }
@@ -420,8 +526,13 @@ html, body {
 }
 
 @keyframes scroll-left {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .works_swiper_wrap {
@@ -444,10 +555,15 @@ html, body {
   margin-right: 20px;
   border-radius: 20px;
   border: 0.2px solid #393939;
+  padding: 1.6rem;
+  cursor: pointer;
 }
 
 .swiper-slide:last-child {
   margin-right: 0 !important;
+  background: none;
+  cursor: none;
+  border: none;
 }
 
 .works_swiper_wrap {
@@ -487,10 +603,6 @@ html, body {
   font-family: var(--font-secondary);
   font-size: 4rem;
   font-weight: 700;
-}
-
-.swiper-slide {
-  padding: 1.6rem;
 }
 
 .slide-inner-wrap_on {
@@ -540,4 +652,72 @@ html, body {
   font-weight: 700;
   font-family: var(--font-secondary);
   color: #393939;
+}
+
+/*------------------------------- work -------------------------------------------*/
+
+
+.section03_wrap h1 {
+  margin: 12rem 0 3rem;
+  font-size: 9rem;
+  font-family: 'Pretendard';
+  font-weight: 700;
+}
+
+.section03_contents {
+  display: flex;
+  justify-content: space-between
+}
+
+.section03_right {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.section03_right>div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.section03_right>div>span {
+  position: static;
+  margin: 10px 0 20px;
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 16px;
+  text-align: left;
+  width: 100%;
+}
+
+.section03_contents img {
+  border-radius: 3%;
+}
+
+.section03_right img {
+  border-radius: 12px;
+  transition: border-radius 0.4s cubic-bezier(.4, 0, .2, 1);
+}
+
+.section03_right img:hover {
+  border-radius: 50%;
+}
+
+@media (max-width: 1024px) {
+  .section03_right {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .section03_right {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section03_right img {
+    transition: none;
+  }
 }

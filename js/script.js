@@ -1,19 +1,16 @@
-
 // 첫 화면
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
   const flipPaths = document.querySelectorAll('.flip-path');
   const clsPaths = document.querySelectorAll('.cls-1');
   const svgWrapper = document.querySelector('.section01_inner_top');
   const header = document.getElementById('header');
   const flipTxt = document.querySelector('.flip_txt');
 
-  // 1. flip-path 순차 등장
   flipPaths.forEach((path, index) => {
     path.style.transitionDelay = `${index * 0.05}s`;
     path.classList.add('active');
   });
 
-  // 2. cls-1 순차 등장
   clsPaths.forEach((path, index) => {
     setTimeout(() => {
       path.classList.add('active');
@@ -25,28 +22,43 @@ window.addEventListener('load', function() {
 
 
   setTimeout(() => {
-    svgWrapper.classList.add('on'); // svg 위로 올라가면서 사라짐
+    svgWrapper.classList.add('on');
   }, totalAnimationTime);
 
   setTimeout(() => {
     header.classList.add('visible');
     flipTxt.classList.add('visible');
-  }, totalAnimationTime + 1000); // svg 이동 후 조금 기다렸다가 보여줌
+  }, totalAnimationTime + 1000);
 });
+
+
+
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+
+window.addEventListener("load", () => {
+  window.scrollTo(0, 0);
+});
+
+
+
 
 // line --------------------------------------------------------------
 const target = document.querySelector('.line');
-const observer = new IntersectionObserver((entries) => {
+const target2 = document.querySelector('.line2');
+const observerLine = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('active');
     }
   });
 }, {
-  threshold: 0.1 // 요소가 50% 이상 보이면 발동
-});  
+  threshold: 0.1
+});
 
-observer.observe(target);
+observerLine.observe(target);
+observerLine.observe(target2);
 
 // tool animation --------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', () => {
@@ -62,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const paths = document.querySelectorAll('.css_svg');
 
   paths.forEach((path, index) => {
-    const delay = index * 0.2; 
+    const delay = index * 0.2;
     path.style.animationDelay = `${delay}s`;
   });
 });
@@ -71,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const paths = document.querySelectorAll('.js_svg');
 
   paths.forEach((path, index) => {
-    const delay = (index * 0.2).toFixed(2); 
+    const delay = (index * 0.2).toFixed(2);
     path.style.animationDelay = `${delay}s`;
   });
 });
@@ -87,21 +99,19 @@ const observer2 = new IntersectionObserver(entries => {
       title.classList.add('shrink');
     }
   });
-}, { threshold: 0.3 });
+}, { threshold: 0.1 });
 
 observer2.observe(title);
 
 // 스크롤 방향에 따라 크기 조절
-let scales = [1, 1.5, 1.8]; // 3단계 scale 설정
+let scales = [1, 1.5, 1.8];
 let currentStep = 1; //
 
 window.addEventListener('wheel', (e) => {
   if (title.classList.contains('shrink')) {
     if (e.deltaY < 0) {
-      // 위로 스크롤 ➔ 다음 단계로 이동 (커지기)
       currentStep = Math.min(currentStep + 1, scales.length - 1);
     } else {
-      // 아래로 스크롤 ➔ 이전 단계로 이동 (작아지기)
       currentStep = Math.max(currentStep - 1, 0);
     }
     title.style.transform = `scale(${scales[currentStep]})`;
@@ -122,5 +132,40 @@ document.addEventListener('DOMContentLoaded', function () {
       nextEl: ".my-button-next",
       prevEl: ".my-button-prev",
     },
+  });
+});
+
+// 링크 연결
+document.querySelectorAll('.swiper-slide').forEach(box => {
+  box.addEventListener('click', () => {
+    const url = box.dataset.url;
+    if (url) window.location.href = url;
+  });
+});
+
+// 마우스
+const tracker = document.getElementById('mouseTracker');
+const hoverAreas = document.querySelectorAll('.mouse-area');
+const hoverImgs = document.querySelectorAll('.imgSquare');
+
+window.addEventListener('mousemove', (e) => {
+  tracker.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+});
+
+hoverAreas.forEach(area => {
+  area.addEventListener('mouseenter', () => tracker.classList.add('big'));
+  area.addEventListener('mouseleave', () => tracker.classList.remove('big'));
+});
+
+hoverImgs.forEach(imgsquare => {
+  imgsquare.addEventListener('mouseenter', () => tracker.classList.add('imgsquare'));
+  imgsquare.addEventListener('mouseleave', () => tracker.classList.remove('imgsquare'));
+});
+
+// 스크롤다운 버튼
+document.querySelector(".scroll_icon").addEventListener("click", () => {
+  window.scrollTo({
+    top: document.body.scrollHeight,
+    behavior: "smooth"
   });
 });
