@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const paths = document.querySelectorAll('.html_svg');
 
   paths.forEach((path, index) => {
-    const delay = (Math.random() * 2).toFixed(2); // 0~2초 랜덤
+    const delay = (Math.random() * 2).toFixed(2); 
     path.style.animationDelay = `${delay}s`;
   });
 });
@@ -92,7 +92,6 @@ document.addEventListener('DOMContentLoaded', () => {
 // Tool tit --------------------------------------------------------------
 const title = document.querySelector('.section02_tit');
 
-// IntersectionObserver로 h2가 화면에 들어오면 축소
 const observer2 = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -103,9 +102,9 @@ const observer2 = new IntersectionObserver(entries => {
 
 observer2.observe(title);
 
-// 스크롤 방향에 따라 크기 조절
+
 let scales = [1, 1.5, 1.8];
-let currentStep = 1; //
+let currentStep = 1; 
 
 window.addEventListener('wheel', (e) => {
   if (title.classList.contains('shrink')) {
@@ -121,8 +120,10 @@ window.addEventListener('wheel', (e) => {
 //Swiper
 document.addEventListener('DOMContentLoaded', function () {
   var swiper = new Swiper(".mySwiper", {
-    slidesPerView: Math.floor(window.innerWidth / 530),
+    slidesPerView: 1,
+    slidesPerGroup: 1,
     centeredSlides: false,
+    loop: false,
     pagination: {
       el: ".swiper-pagination",
       type: "fraction",
@@ -131,6 +132,10 @@ document.addEventListener('DOMContentLoaded', function () {
       nextEl: ".my-button-next",
       prevEl: ".my-button-prev",
     },
+    breakpoints: {
+      0: { slidesPerView: 1.3, slidesPerGroup: 1, spaceBetween: 8 },
+      1024: { slidesPerView: 2.55,   slidesPerGroup: 1, spaceBetween: 10 }
+    }
   });
 });
 
@@ -147,7 +152,7 @@ const tracker = document.getElementById('mouseTracker');
 const hoverAreas = document.querySelectorAll('.mouse-area');
 const hoverImgs = document.querySelectorAll('.imgSquare');
 
-window.addEventListener('mousemove', (e) => {
+window.addEventListener('pointermove', (e) => {
   tracker.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
 });
 
