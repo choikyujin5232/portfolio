@@ -71,29 +71,15 @@ body {
   border-radius: 30px;
 }
 
-.intro {
-  margin: 15rem 0 15rem;
-  display: flex;
-  padding: 0 10rem;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 10rem;
-}
+@media (max-width: 430px) {
 
-.intro-left {
-  font-size: 4.7rem;
-  font-family: "pretendard";
-  font-weight: 500;
-  line-height: 1.2;
-}
+  .header_container ul li {
+    display: none;
+  }
 
-.intro-right {
-  font-size: 1.5rem;
-  line-height: 1.6;
-  color: #616161;
-  font-weight: 500;
-  letter-spacing: -0.8px;
-  font-family: "pretendard";
+  #mouseTracker {
+    display: none;
+  }
 }
 
 /*------------------------------- header -------------------------------------------*/
@@ -205,6 +191,45 @@ body {
   object-fit: contain;
 }
 
+@media (max-width: 430px) {
+
+  .section01_inner_top svg {
+    max-width: 100%;
+    transform: scale(0.85);
+    transform-origin: center;
+  }
+
+  .text_svg {
+    gap: 1rem;
+  }
+
+  .hide_text {
+    font-size: 0.7rem;
+  }
+
+  .section01_inner {
+    height: 20rem;
+  }
+
+  .section01_inner_top {
+    margin-bottom: 10rem;
+    margin-top: 8rem;
+  }
+
+  .scroll_icon {
+    width: 20px;
+    height: auto;
+  }
+
+  .flip_txt {
+    padding: 1.2rem;
+  }
+
+  .sub_page {
+    padding: 17rem 2rem 0 2rem;
+  }
+}
+
 /*------------------------------- section01 -------------------------------------------*/
 
 .line {
@@ -259,6 +284,35 @@ body {
   height: 0.5px;
   width: 100%;
   background: rgba(121, 121, 121, 0.8);
+}
+
+.intro {
+  margin: 15rem 0 15rem;
+  display: flex;
+  padding: 0 10rem;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10rem;
+}
+
+.intro-left {
+  font-size: 4.7rem;
+  font-family: "pretendard";
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.intro-right {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: #616161;
+  font-weight: 500;
+  letter-spacing: -0.8px;
+  font-family: "pretendard";
+}
+
+.mo-text {
+  display: none;
 }
 
 .section02 {
@@ -499,6 +553,77 @@ body {
   }
 }
 
+@media (max-width: 430px) {
+
+  .line {
+    margin-bottom: 3rem;
+  }
+
+  .intro {
+    margin: 1rem 0 1rem;
+    padding: 0 2rem;
+    gap: 1.5rem;
+  }
+
+  .intro-left {
+    font-size: 1rem;
+  }
+
+  .intro-right {
+    font-size: 0.5rem;
+  }
+
+  .pc-text {
+    display: none;
+  }
+
+  .mo-text {
+    display: block;
+  }
+
+  .section02 {
+    margin-top: 4rem;
+  }
+
+  .section02_tit {
+    font-size: 4rem;
+  }
+
+  .Tools {
+    margin-top: 5rem;
+    padding: 0 1rem;
+    gap: 0;
+  }
+
+  .Tools_txt {
+    font-size: 1.5rem;
+  }
+
+  .Tools_copy {
+    font-size: 0.5rem;
+    line-height: 12px;
+    margin-top: 1rem;
+  }
+
+  .Tools_box {
+    gap: 2rem;
+    height: 15rem;
+    justify-content: space-between;
+  }
+
+  .Tools_box svg {
+    width: 100%;
+    max-width: 120px;
+    flex: 0 0 120px;
+    height: auto;
+  }
+
+  .Tools_txt_wrap {
+    width: 9rem;
+  }
+
+}
+
 /*------------------------------- section02 -------------------------------------------*/
 
 .marquee-wrap {
@@ -623,6 +748,7 @@ body {
   line-height: 1.5;
   text-align: right;
   color: #dadada;
+  white-space: pre-line;
 }
 
 .slide-inner-tag {
@@ -656,6 +782,86 @@ body {
   color: #393939;
 }
 
+@media (max-width: 430px) {
+  .marquee-wrap {
+    margin-top: 1rem;
+  }
+
+  .marquee span {
+    font-size: 5rem;
+  }
+
+  .works_swiper_wrap {
+    gap: 4rem;
+    flex-direction: column;
+    margin-top: 3rem;
+  }
+
+  .works_tit {
+    font-size: 2rem;
+  }
+
+  .my-button-wrap {
+    top: 46px;
+    left: 3px;
+    gap: 9px;
+  }
+
+  .my-button-prev,
+  .my-button-next {
+    padding: 5px;
+  }
+
+  .my-button-prev svg,
+  .my-button-next svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .swiper {
+    height: 200px;
+    margin: 10px auto;
+  }
+
+  .swiper-slide {
+    width: 250px !important;
+    padding: 1rem;
+    border-radius: 12px;
+    margin-right: 0.7rem;
+  }
+
+  .swiper-slide:last-child {
+    margin-right: 0 !important;
+  }
+
+  .works_tit {
+    font-size: 2rem;
+  }
+
+  .slide-inner-wrap_on img {
+    width: 100px;
+  }
+
+  .slide-inner-ex {
+    font-size: 0.5rem;
+    text-align: left;
+    line-height: 1.4;
+    text-align: left;
+  }
+
+  .slide-inner-title {
+    font-size: 1.8rem;
+  }
+
+  .slide-inner-wrap_bottom p {
+    font-size: 2.5rem;
+  }
+  
+  .slide-inner {
+    width: 100px;
+  }
+}
+
 /*------------------------------- work -------------------------------------------*/
 
 
@@ -678,13 +884,6 @@ body {
   font-size: 1.7rem;
   line-height: 35px;
   margin: 0;
-}
-
-.section03_text {
-  position: sticky;
-  top: 100px;          /* 화면 위에서 100px 떨어진 위치에 붙음 */
-  flex: 0 0 260px; 
-  align-self: flex-start;    /* 왼쪽 영역 너비 */
 }
 
 .section03_right {
@@ -729,28 +928,52 @@ body {
   border-radius: 50%;
 }
 
-@media (max-width: 1024px) {
-  .section03_right {
-    grid-template-columns: repeat(2, 1fr);
+@media (max-width: 430px) {
+  .section03_wrap h1 {
+    margin: 3rem 0 2rem;
+    font-size: 2rem;
   }
-}
 
-@media (max-width: 640px) {
-  .section03_right {
-    grid-template-columns: 1fr;
+  .section03_text h3 {
+    display: none;
   }
-}
 
-@media (prefers-reduced-motion: reduce) {
+  .section03_right {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    width: 100%;
+  }
+
+  .section03_contents {
+    display: block;
+  }
+
+  .section03_right > div {
+    align-items: center;
+  }
+
   .section03_right img {
-    transition: none;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+
+  .section03_right > div > span {
+    font-size: 0.5rem;
+    margin: 6px 0 8px;
+  }
+
+  .line3 {
+    margin-top: 5rem;
   }
 }
+
+
 
 /*------------------------------------------ disign --------------------------------------------------------*/
 
 .contact-alt {
-  padding: 130px 20px;
+  padding: 90px 20px;
   color: #f8f8f8;
   text-align: center;
 }
@@ -801,16 +1024,21 @@ body {
   transform: scaleX(1);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 430px) {
   .contact-alt {
-    padding: 120px 16px;
+    padding: 3rem 5rem;
+  }
+
+  .contact-alt h2 {
+    font-size: 1.2rem;
   }
 
   .contact-alt p {
-    font-size: 1rem;
+    font-size: 0.5rem;
+    margin-bottom: 1rem;
   }
 
   .email-link {
-    font-size: 1.1rem;
+    font-size: 0.7rem;
   }
 }

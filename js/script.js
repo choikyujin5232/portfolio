@@ -123,7 +123,6 @@ document.addEventListener('DOMContentLoaded', function () {
   var swiper = new Swiper(".mySwiper", {
     slidesPerView: Math.floor(window.innerWidth / 530),
     centeredSlides: false,
-    spaceBetween: 20,
     pagination: {
       el: ".swiper-pagination",
       type: "fraction",
