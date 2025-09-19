@@ -162,10 +162,3 @@ hoverImgs.forEach(imgsquare => {
   imgsquare.addEventListener('mouseleave', () => tracker.classList.remove('imgsquare'));
 });
 
-// 스크롤다운 버튼
-document.querySelector(".scroll_icon").addEventListener("click", () => {
-  window.scrollTo({
-    top: document.body.scrollHeight,
-    behavior: "smooth"
-  });
-});
