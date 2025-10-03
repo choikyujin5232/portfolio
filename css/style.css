@@ -71,7 +71,7 @@ body {
   border-radius: 30px;
 }
 
-@media (max-width: 430px) {
+@media (max-width: 1024px) {
 
   .header_container ul li {
     display: none;
@@ -191,7 +191,7 @@ body {
   object-fit: contain;
 }
 
-@media (max-width: 430px) {
+@media (max-width: 1024px) {
 
   .section01_inner_top svg {
     max-width: 100%;
@@ -303,6 +303,7 @@ body {
 }
 
 .intro-right {
+  min-width: 250px;
   font-size: 1.5rem;
   line-height: 1.6;
   color: #616161;
@@ -553,14 +554,100 @@ body {
   }
 }
 
-@media (max-width: 430px) {
+@media (max-width: 1024px) {
+
+  .flip_txt {
+    display: none;
+  }
+
+  .intro {
+    margin: 1rem 0;
+    padding: 0 7rem;
+  }
+
+  .intro-left {
+    font-size: 3rem;
+  }
+
+  .intro-right {
+    font-size: 1.2rem;
+  }
+
+  .pc-text {
+    display: none;
+  }
+
+  .mo-text {
+    display: block;
+  }
+
+  .section02_tit {
+    font-size: 10rem;
+  }
+
+  .Tools {
+    margin-top: 10rem;
+    padding: 0 5rem;
+    gap: 5rem;
+  }
+
+  .Tools_txt {
+    font-size: 3rem;
+  }
+
+  .Tools_copy {
+    font-size: 1.2rem;
+    line-height: 2rem;
+    margin-top: 2rem;
+  }
+
+  .Tools_box {
+    gap: 2rem;
+    height: 20rem;
+    justify-content: space-between;
+  }
+
+  .Tools_box svg {
+    width: 100%;
+    max-width: 300px;
+    flex: 0 0 300px;
+    height: auto;
+  }
+
+  .Tools_txt_wrap {
+    min-width: 200px;
+    width: 30rem;
+  }
+}
+
+@media (max-width: 768px) and (min-width: 481px) {
+
+  .intro {
+    padding: 0 4rem;
+    gap: 5rem;
+  }
+
+  .intro-left {
+    font-size: 2.5rem;
+  }
+
+  .intro-right {
+    font-size: 1rem;
+  }
+
+  .Tools {
+    padding: 0 3rem;
+  }
+}
+
+@media (max-width: 480px) {
 
   .line {
     margin-bottom: 3rem;
   }
 
   .intro {
-    margin: 1rem 0 1rem;
+    margin: 1rem 0;
     padding: 0 2rem;
     gap: 1.5rem;
   }
@@ -573,14 +660,6 @@ body {
     font-size: 0.5rem;
   }
 
-  .pc-text {
-    display: none;
-  }
-
-  .mo-text {
-    display: block;
-  }
-
   .section02 {
     margin-top: 4rem;
   }
@@ -591,8 +670,8 @@ body {
 
   .Tools {
     margin-top: 5rem;
-    padding: 0 1rem;
-    gap: 0;
+    padding: 0 2rem;
+    gap: 2rem;
   }
 
   .Tools_txt {
@@ -600,8 +679,8 @@ body {
   }
 
   .Tools_copy {
-    font-size: 0.5rem;
-    line-height: 12px;
+    font-size: 0.8rem;
+    line-height: 1.3rem;
     margin-top: 1rem;
   }
 
@@ -619,10 +698,10 @@ body {
   }
 
   .Tools_txt_wrap {
-    width: 9rem;
+    width: 13rem;
   }
-
 }
+
 
 /*------------------------------- section02 -------------------------------------------*/
 
@@ -776,7 +855,29 @@ body {
   color: #393939;
 }
 
-@media (max-width: 430px) {
+@media (max-width: 768px) and (min-width: 481px) {
+  .marquee-wrap {
+    margin-top: 5rem;
+  }
+
+  .marquee span {
+    font-size: 12rem;
+  }
+
+  .works_swiper_wrap {
+    gap: 8rem;
+    flex-direction: column;
+    margin-top: 7rem;
+  }
+
+  .my-button-prev svg,
+  .my-button-next svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
   .marquee-wrap {
     margin-top: 1rem;
   }
@@ -839,10 +940,8 @@ body {
   }
 
   .slide-inner-ex {
-    font-size: 0.5rem;
-    text-align: left;
+    font-size: 0.7rem;
     line-height: 1.4;
-    text-align: left;
   }
 
   .slide-inner-title {
@@ -925,10 +1024,11 @@ body {
   border-radius: 50%;
 }
 
-@media (max-width: 430px) {
+@media (max-width: 1024px) {
+
   .section03_wrap h1 {
-    margin: 3rem 0 2rem;
-    font-size: 2rem;
+    margin: 10rem 0 2rem;
+    font-size: 4rem;
   }
 
   .section03_text h3 {
@@ -937,7 +1037,7 @@ body {
 
   .section03_right {
     grid-template-columns: repeat(3, 1fr);
-    gap: 6px;
+    gap: 0.6rem;
     width: 100%;
   }
 
@@ -952,16 +1052,78 @@ body {
   .section03_right img {
     width: 100%;
     height: auto;
-    border-radius: 5px;
+    border-radius: 10px;
   }
 
   .section03_right>div>span {
-    font-size: 0.5rem;
-    margin: 6px 0 8px;
+    font-size: 1rem;
+    margin: 10px 0 8px;
   }
 
   .line3 {
     margin-top: 5rem;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .section03_wrap h1 {
+    margin: 7rem 0 2rem;
+    font-size: 3rem;
+  }
+
+  .section03_text h3 {
+    display: none;
+  }
+
+  .section03_right {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .section03_contents {
+    display: block;
+  }
+
+  .section03_right>div {
+    align-items: center;
+  }
+
+  .section03_right img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .section03_right>div>span {
+    font-size: 0.8rem;
+    margin: 10px 0 8px;
+  }
+
+  .line3 {
+    margin-top: 5rem;
+  }
+}
+
+@media (max-width: 480px) {
+
+   .section03_wrap h1 {
+    margin: 7rem 0 2rem;
+    font-size: 2rem;
+  }
+
+  .section03_right>div>span {
+    font-size: 0.7rem;
+    margin: 8px 0 8px;
+  }
+
+   .section03_right img {
+    border-radius: 5px;
+  }
+
+  .section03_right {
+    gap: 0.4rem;
   }
 }
 
@@ -1021,17 +1183,17 @@ body {
   transform: scaleX(1);
 }
 
-@media (max-width: 430px) {
+@media (max-width: 480px) {
   .contact-alt {
     padding: 3rem 5rem;
   }
 
   .contact-alt h2 {
-    font-size: 1.2rem;
+    font-size: 1.8rem;
   }
 
   .contact-alt p {
-    font-size: 0.5rem;
+    font-size: 0.8rem;
     margin-bottom: 1rem;
   }
 

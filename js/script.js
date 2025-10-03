@@ -134,7 +134,10 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     breakpoints: {
       0: { slidesPerView: 1.3, slidesPerGroup: 1, spaceBetween: 8 },
-      1024: { slidesPerView: 2.55,   slidesPerGroup: 1, spaceBetween: 10 }
+      480: { slidesPerView: 1.65,   slidesPerGroup: 1, spaceBetween: 8 },
+      768: { slidesPerView: 1.4,   slidesPerGroup: 1, spaceBetween: 10 },
+      1024: { slidesPerView: 1.37,   slidesPerGroup: 1, spaceBetween: 10 },
+      1440: { slidesPerView: 2.53,    slidesPerGroup: 1, spaceBetween: 10 }
     }
   });
 });
