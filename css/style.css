@@ -822,6 +822,7 @@ body {
   text-align: right;
   color: #dadada;
   white-space: pre-line;
+  width: 200px;
 }
 
 .slide-inner-tag {
@@ -942,6 +943,7 @@ body {
   .slide-inner-ex {
     font-size: 0.7rem;
     line-height: 1.4;
+    width: 100px;
   }
 
   .slide-inner-title {
