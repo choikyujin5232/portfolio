@@ -169,3 +169,47 @@ hoverImgs.forEach(imgsquare => {
   imgsquare.addEventListener('mouseleave', () => tracker.classList.remove('imgsquare'));
 });
 
+// 해시 변경
+document.querySelectorAll(".header_container_wrap a").forEach(link => {
+  link.addEventListener("click", e => {
+    e.preventDefault();
+    const targetId = link.getAttribute("href").replace("#", "");
+    const targetEl = document.getElementById(targetId);
+    if (targetEl) {
+      targetEl.scrollIntoView({ behavior: "smooth" });
+      history.pushState(null, "", `#${targetId}`);
+    }
+  });
+});
+
+const sections = document.querySelectorAll("#projects, #design, #contact");
+
+const observer = new IntersectionObserver(entries => {
+  let activeId = null;
+
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      activeId = entry.target.id;
+    }
+  });
+
+  if (activeId) {
+    history.replaceState(null, "", `#${activeId}`);
+  } else {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    if (scrollTop < document.getElementById("projects").offsetTop - window.innerHeight / 2) {
+      history.replaceState(null, "", window.location.pathname);
+    }
+  }
+}, {
+  threshold: 0.5
+});
+
+sections.forEach(section => observer.observe(section));
+
+window.addEventListener("load", () => {
+  if (window.location.hash) {
+    history.replaceState(null, "", window.location.pathname);
+    window.scrollTo(0, 0);
+  }
+});
